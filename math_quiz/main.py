@@ -72,6 +72,6 @@ print(f'6.:{int(összes_kg)}')
 dobhato_szam = 6 #Ennyi szám van
 Anna = 1 #ennyi esélye van 6 ot dobni
 Balazs = 0 #ennyi esélye van 6 ot dobni, ha anna a győztes
-Anna_esélye = (Balazs+Anna) / ((dobhato_szam-1) + dobhato_szam)
+Anna_esélye = Anna / dobhato_szam * ((dobhato_szam**2) / ((Anna+Balazs)*dobhato_szam - 1)) # Anna hatosdobási esélyét (1/6) megszoroztam mindkettőjük össszes lehetősége / kivéve amikor balázs dob 6 ot(36/11)
 
 print(f'7.:{Anna_esélye}')
