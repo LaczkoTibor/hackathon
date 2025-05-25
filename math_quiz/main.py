@@ -1,3 +1,5 @@
+import math
+
 #1. feladat
 
 
@@ -5,7 +7,23 @@
 
 print('1.:')
 #2. feladat
-print('2.:')
+def f(x):
+    return 4**x + 6**x - 9**x
+
+
+minimum = 0 #A szám amitől indulunk
+maximum = 10 #A szám ameddig nézzük
+pontossag = 1e-7 #Megadom hogy mennyire legyen pontos
+
+while maximum - minimum > pontossag: #Addig felezem a két értéket, amég nem lesz meg az a pontosság ami nekem kell
+    kozep = (minimum + maximum) / 2 #Megkeresem a kető közepét
+    if f(kozep) > 0: #Megnézi melyiktől van meszebb, azt egyenlővé teszi vele (igy felváltva mindkettő kap egy értéket, ami végül az eredmény nél kisebb és nagyobb lesz)
+        minimum = kozep
+    else:
+        maximum = kozep
+
+print(f"2.:{(minimum + maximum) / 2}") #Össze adom a kettőt és elosztom 2 vel, mivel így megkapom a kellő eredményt.
+
 #3. feladat
 megoldas3 = 0
 szam_alap = 1 #A gyök alatt lévő szám
