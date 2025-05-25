@@ -8,10 +8,10 @@ print('1.:')
 print('2.:')
 #3. feladat
 megoldas3 = 0
-szam_alap = 1
+szam_alap = 1 #A gyök alatt lévő szám
 
-while szam_alap != 100:
-    megoldas3 += 1/(szam_alap ** 0.5 + (szam_alap+1)**0.5)
+while szam_alap != 100:  # Addig meg végig, amég nem lesz 100 a gyök alatti szám
+    megoldas3 += 1/(szam_alap ** 0.5 + (szam_alap+1)**0.5) # Az egyenlet, amit mindig hozzá ad
     szam_alap += 1
 
 
@@ -22,7 +22,7 @@ print(f'3.:{megoldas3}')
 #4. feladat
 n = 1
 Egyenlet = None
-while Egyenlet != 0:
+while Egyenlet != 0: #Addig probálja amég 0 nem  lesz a megoldás.
     Egyenlet = n**(2*n)-2*n**n+1
     if Egyenlet != 0:
         n += 1
@@ -51,7 +51,9 @@ egér = eset6_1 - macska # Az első esetből kiszámolom az egér súlyát.
 
 print(f'6.:{int(összes_kg)}')
 #7. feladat
+dobhato_szam = 6 #Ennyi szám van
+Anna = 1 #ennyi esélye van 6 ot dobni
+Balazs = 0 #ennyi esélye van 6 ot dobni, ha anna a győztes
+Anna_esélye = (Balazs+Anna) / ((dobhato_szam-1) + dobhato_szam)
 
-
-
-print('7.:')
+print(f'7.:{Anna_esélye}')
