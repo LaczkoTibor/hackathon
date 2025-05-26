@@ -17,6 +17,8 @@ def dobas(min_val,max_val):
     
   if (max_val-min_val)+1 > 20:
     db += ((max_val-min_val)+1) // 20
+  if (max_val-min_val)+1 >= 10 and (max_val-min_val)+1 < 20:
+    db += 1
 
   szam = (max_val-min_val)+1
 
