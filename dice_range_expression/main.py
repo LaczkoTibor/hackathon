@@ -2,39 +2,54 @@ def dobas(a,b):
   a = int(a)
   b = int(b)
   
-  dobokackak = [20,10,8,6,4,3,2]
-  szam = (b-a)+1
-  seged = []
+  dobokackak = [2,3,4,6,8,10,20]
   fajta = []
   maximum = 0
   darabok = []
   vegeredmeny = []
   db = 1
-  while szam > 20:
-    db += 1
-    seged.append(20)
-    szam -= 20
-  if seged == []:
-    seged.append(szam)
-  else:
-    seged.append(szam+(db-1))
-  
+  n = 0
+
+  while a <= 0:
+    n += 1
+    a += 1
+    b += 1
+  if n != 0:
+    n -= 1
+    
+  if (b-a)+1 > 20:
+    db += ((b-a)+1) // 20
+
   szam = (b-a)+1
 
-  for dobas in seged:
+  if db > 1:
+    szam += db-1
+
+  while szam > 0:
     for kocka in range(len(dobokackak)):
-      if dobas <= dobokackak[kocka] and dobas > dobokackak[kocka+1]:
+      if szam >= dobokackak[kocka] and szam < dobokackak[kocka+1]:
+        szam -= dobokackak[kocka]
         fajta.append(dobokackak[kocka])
+      elif szam > 20:
+        szam -= dobokackak[-1]
+        fajta.append(dobokackak[-1])
+      elif szam == 1:
+        szam -= dobokackak[0]
+        fajta.append(dobokackak[0])
+
+  fajta_adat = []
 
   for i in fajta:
-    darabok.append(fajta.count(i))
+    if i not in fajta_adat:
+      darabok.append(fajta.count(i))
+      fajta_adat.append(i)
     maximum += i
+    
   
-  for x,y in zip(darabok,fajta[::-1]):
+  for x,y in zip(darabok[::-1],fajta[::-1]):
     vegeredmeny.append(str(x) + str(f"d{y}"))
   if b-maximum != 0:
-    vegeredmeny.append(str(f"{b-maximum:+}"))
-     
+    vegeredmeny.append(str(f"{(b-maximum)-n:+}"))
 
   print("+".join(vegeredmeny[:-1])+"".join(vegeredmeny[-1]))
 
