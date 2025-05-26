@@ -28,7 +28,9 @@ def dobas(min_val,max_val):
 
   while szam > 0:
     for kocka in range(len(dobokackak)):
-      if szam >= dobokackak[kocka] and szam < dobokackak[kocka+1]:
+      if szam == 0:
+        break
+      if dobokackak[kocka] / szam >= 1:
         szam -= dobokackak[kocka]
         fajta.append(dobokackak[kocka])
       elif szam > 20:
