@@ -2,7 +2,7 @@ import math
 
 #1. feladat
 
-
+print(f"1.:")
 #2. feladat
 def f(x):
     return 4**x + 6**x - 9**x
