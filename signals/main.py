@@ -1,10 +1,10 @@
 def dekod(adat):
   dekodolo = {}
-  for szam,betu in zip(adat[0],adat[1]):
-    dekodolo[szam] = betu
+  for i in adat:
+    for szam,betu in zip(i[0],i[1]):
+      dekodolo[szam] = betu
   
-  for x,y in dekodolo.items():
-    print(f'"{str(x)}": "{str(y)}"')
+  return dekodolo
 
 
 with open('./input.txt', 'r') as f:
@@ -13,6 +13,14 @@ with open('./input.txt', 'r') as f:
 print(input)
 
 lista = eval(input)
+forras = []
 
 for i in lista:
-  dekod(i)
+  forras.append(i)
+
+eredmeny = dekod(forras)
+
+print("{")
+for k in sorted(eredmeny.keys()):
+  print(f'\t"{k}": "{eredmeny[k]}",')
+print("}")
