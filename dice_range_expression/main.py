@@ -1,36 +1,30 @@
 def dobas(min_val,max_val):
   min_val = int(min_val)
   max_val = int(max_val)
-  
+
   dobokackak = [2,3,4,6,8,10,20]
   fajta = []
   maximum = 0
   darabok = []
   vegeredmeny = []
-  db = 0
+  db = 1
   n = 0
 
   while min_val <= 0:
     n += 1
     min_val += 1
     max_val += 1
-  
-  seged = (max_val-min_val)+1
-  while seged > 0:
-    for i in range(len(dobokackak)):
-      if seged >= dobokackak[i] and seged < dobokackak[i+1]:
-        seged -= dobokackak[i]
-        db+= 1
-      elif seged > 20:
-        seged -= 20
-        db+= 1
-      elif seged == 1:
-        seged -= 2
-        db+= 1
-      
-      
-  szam = ((max_val-min_val)+1)+db-1
 
+
+  if (max_val-min_val)+1 >= 20:
+    db += ((max_val-min_val)+1) // 20
+  if (max_val-min_val)+1 >= 10 and (max_val-min_val)+1 < 20:
+    db += 1
+
+  szam = (max_val-min_val)+1
+
+  if db > 1:
+    szam += db-1
 
   while szam > 0:
     for kocka in range(len(dobokackak)):
@@ -51,12 +45,13 @@ def dobas(min_val,max_val):
       darabok.append(fajta.count(i))
       fajta_adat.append(i)
     maximum += i
-    
-  
+
+
   for x,y in zip(darabok[::-1],fajta[::-1]):
     vegeredmeny.append(str(x) + str(f"d{y}"))
   if max_val-maximum != 0:
     vegeredmeny.append(str(f"{(max_val-maximum)-n:+}"))
+
   print("+".join(vegeredmeny[:-1])+"".join(vegeredmeny[-1]))
 
 
