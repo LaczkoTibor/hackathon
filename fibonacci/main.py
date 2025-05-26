@@ -19,12 +19,10 @@ def fibonacci(N):
     print(", ".join(str(elem) for elem in vegleges))
 
 
-
-with open('./input.txt', 'r') as f:
+with open('C:/Users/Thybrencs/Desktop/hackathlon/fibonacci/input.txt', 'r') as f:
   input = f.read()
 
 print(input)
-
 
 adat = input.split("\n")
 
