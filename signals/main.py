@@ -4,7 +4,7 @@ def dekod(adat):
     dekodolo[szam] = betu
   
   for x,y in dekodolo.items():
-    print(f"{x}:{y}")
+    print(f'"{str(x)}": "{str(y)}"')
 
 
 with open('./input.txt', 'r') as f:
