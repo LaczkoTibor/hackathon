@@ -22,5 +22,5 @@ eredmeny = dekod(forras)
 
 print("{")
 for k in sorted(eredmeny.keys()):
-  print(f'\t"{k}": "{eredmeny[k]}",')
+  print(f'  "{k}": "{eredmeny[k]}",')
 print("}")
