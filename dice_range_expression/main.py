@@ -7,14 +7,14 @@ def dobas(min_val,max_val):
   maximum = 0
   darabok = []
   vegeredmeny = []
-  db = 1
+  db = 0
   n = 0
 
   while min_val <= 0:
     n += 1
     min_val += 1
     max_val += 1
-    
+  
   seged = (max_val-min_val)+1
   while seged > 0:
     for i in range(len(dobokackak)):
@@ -27,8 +27,10 @@ def dobas(min_val,max_val):
       elif seged == 1:
         seged -= 2
         db+= 1
-
+      
+      
   szam = ((max_val-min_val)+1)+db-1
+
 
   while szam > 0:
     for kocka in range(len(dobokackak)):
@@ -55,7 +57,6 @@ def dobas(min_val,max_val):
     vegeredmeny.append(str(x) + str(f"d{y}"))
   if max_val-maximum != 0:
     vegeredmeny.append(str(f"{(max_val-maximum)-n:+}"))
-
   print("+".join(vegeredmeny[:-1])+"".join(vegeredmeny[-1]))
 
 
