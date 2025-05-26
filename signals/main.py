@@ -10,8 +10,6 @@ def dekod(adat):
 with open('./input.txt', 'r') as f:
   input = f.read()
 
-print(input)
-
 lista = eval(input)
 
 for i in lista:
