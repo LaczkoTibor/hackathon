@@ -1,11 +1,11 @@
 import math
 
 #1. feladat
-# Két befogójának a hossza, ami a két ponthoz való derékszögű háromszöghöz tartozik
+# Két befogójának a hossza, ami a két ponthoz való derékszögű háromszöghöz tartozik (feltételezzükk, hogy 1,2 arányban vannak a befogók)
 a = 1
 b = 2
 
-R = (a**2 + b**2)**0.5 #Kiszámoljuk a sugarat pitagorsa tétellel
+R = (a**2 + b**2)**0.5 #Kiszámoljuk a sugarat(befogot) pitagorsa tétellel
 
 
 print(f'1.:{R}')
@@ -59,7 +59,7 @@ eset5_2 = 130 #Asztal + egér - macska = 130
 megoldás5 = (eset5_1 +eset5_2) / 2 # Mivel a macskát és az egeret is kivonjuk az össze adott képlwtwkben, így a két asztal az összege az eset5_1 és eset5_2, amit elosztunk 2-vel.
 
 
-print(f'5.:{int(megoldás5)}')
+print(f'5.:{int(megoldás5)}cm')
 #6. feladat
 eset6_1 = 10 #Macska + Egér
 eset6_2 = 20 #Kutya + Egér
@@ -71,7 +71,7 @@ egér = eset6_1 - macska # Az első esetből kiszámolom az egér súlyát.
 
 összes_kg = macska + kutya + egér
 
-print(f'6.:{int(összes_kg)}')
+print(f'6.:{int(összes_kg)}kg')
 #7. feladat
 dobhato_szam = 6 #Ennyi szám van
 Anna = 1 #ennyi esélye van 6 ot dobni
