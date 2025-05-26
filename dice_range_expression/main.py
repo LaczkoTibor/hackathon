@@ -14,8 +14,9 @@ def dobas(min_val,max_val):
     n += 1
     min_val += 1
     max_val += 1
-
-
+  if n > 0:
+    n+= 1
+    max_val+= 1
   if (max_val-min_val)+1 >= 20:
     db += ((max_val-min_val)+1) // 20
   if (max_val-min_val)+1 >= 10 and (max_val-min_val)+1 < 20:
@@ -25,12 +26,12 @@ def dobas(min_val,max_val):
 
   if db > 1:
     szam += db-1
-
+  print(db)
   while szam > 0:
     for kocka in range(len(dobokackak)):
       if szam == 0:
         break
-      if dobokackak[kocka] / szam >= 1:
+      if szam >= dobokackak[kocka] and szam < dobokackak[kocka+1]:
         szam -= dobokackak[kocka]
         fajta.append(dobokackak[kocka])
       elif szam > 20:
@@ -47,7 +48,7 @@ def dobas(min_val,max_val):
       darabok.append(fajta.count(i))
       fajta_adat.append(i)
     maximum += i
-
+  
 
   for x,y in zip(darabok[::-1],fajta[::-1]):
     vegeredmeny.append(str(x) + str(f"d{y}"))
