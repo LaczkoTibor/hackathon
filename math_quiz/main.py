@@ -1,14 +1,7 @@
 import math
 
 #1. feladat
-# Két befogójának a hossza, ami a két ponthoz való derékszögű háromszöghöz tartozik (feltételezzükk, hogy 1,2 arányban vannak a befogók)
-a = 1
-b = 2
 
-R = (a**2 + b**2)**0.5 #Kiszámoljuk a sugarat(befogot) pitagorsa tétellel
-
-
-print(f'1.:{R}')
 
 #2. feladat
 def f(x):
