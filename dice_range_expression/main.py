@@ -1,6 +1,6 @@
-def dobas(a,b):
-  a = int(a)
-  b = int(b)
+def dobas(min_val,max_val):
+  min_val = int(min_val)
+  max_val = int(max_val)
   
   dobokackak = [2,3,4,6,8,10,20]
   fajta = []
@@ -10,17 +10,17 @@ def dobas(a,b):
   db = 1
   n = 0
 
-  while a <= 0:
+  while min_val <= 0:
     n += 1
-    a += 1
-    b += 1
+    min_val += 1
+    max_val += 1
   if n != 0:
     n -= 1
     
-  if (b-a)+1 > 20:
-    db += ((b-a)+1) // 20
+  if (max_val-min_val)+1 > 20:
+    db += ((max_val-min_val)+1) // 20
 
-  szam = (b-a)+1
+  szam = (max_val-min_val)+1
 
   if db > 1:
     szam += db-1
@@ -48,8 +48,8 @@ def dobas(a,b):
   
   for x,y in zip(darabok[::-1],fajta[::-1]):
     vegeredmeny.append(str(x) + str(f"d{y}"))
-  if b-maximum != 0:
-    vegeredmeny.append(str(f"{(b-maximum)-n:+}"))
+  if max_val-maximum != 0:
+    vegeredmeny.append(str(f"{(max_val-maximum)-n:+}"))
 
   print("+".join(vegeredmeny[:-1])+"".join(vegeredmeny[-1]))
 
